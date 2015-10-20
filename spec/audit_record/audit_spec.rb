@@ -4,7 +4,7 @@ require 'pry'
 describe AuditRecord::Audit do
   describe "on create" do
 
-    it "should call audit_create" do
+    it "should call handle_audit" do
       a=AuditRecord::Audit.new
       AuditRecord.stub(:handle_audit)
       
