@@ -9,9 +9,9 @@ Gem::Specification.new do |gem|
   gem.version     = AuditRecord::VERSION
   gem.authors     = ["ocowchun"]
   gem.email       = ["ocowchun@gmail.com"]
-  gem.homepage    = "TODO"
-  gem.summary     = "TODO: Summary of AuditRecord."
-  gem.description = "TODO: Description of AuditRecord."
+  gem.homepage    = "https://github.com/sudo-recruit/audit_record"
+  gem.summary     = "audit ActiveRecord change"
+  gem.description = "audit ActiveRecord change"
   gem.license     = "MIT"
 
   gem.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
