@@ -23,8 +23,10 @@ module AuditRecord
 
         self.non_audited_columns = except
 
+
         after_create :audit_create
         after_update :audit_update
+        after_commit :handle_audit
 
       end
 
@@ -36,6 +38,7 @@ module AuditRecord
 
 
     module LocalInstanceMethods
+      attr_accessor :action,:audited_changes_attrs
 
       def audited_attributes
         attributes.except(*non_audited_columns)
@@ -50,20 +53,28 @@ module AuditRecord
         end
       end
 
-      def handle_audit(attrs)
-        a=AuditRecord::Audit.new
-        attrs[:auditable_type]=self.class.to_s
-        attrs[:auditable_id]=self.id
-        a.create(attrs)
+      def handle_audit()
+        if audited_changes_attrs.present?
+          a=AuditRecord::Audit.new
+          attrs={action:action,audited_changes:audited_changes_attrs}
+          attrs[:auditable_type]=self.class.to_s
+          attrs[:auditable_id]=self.id
+          a.create(attrs)
+        end
       end
 
       def audit_create
-        handle_audit(action: 'create', audited_changes: audited_attributes)
+        self.action='create'
+        self.audited_changes_attrs=audited_attributes
       end
 
       def audit_update
-        unless (changes = audited_changes).empty?
-          handle_audit(action: 'update', audited_changes: changes)
+        if (changes = audited_changes).empty?
+          self.action=nil
+          self.audited_changes_attrs=nil
+        else
+          self.action='update'
+          self.audited_changes_attrs=changes
         end
       end
     end

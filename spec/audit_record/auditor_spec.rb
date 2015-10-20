@@ -19,7 +19,28 @@ describe AuditRecord::Auditor do
       user.save
 
       audited_attributes={"name"=> 'darth', "username"=> 'darth',"activated"=>nil, "suspended_at"=>nil, "logins"=>0}
-      expect(user).to have_received(:handle_audit).with(action: 'create', audited_changes: audited_attributes)
+      expect(user).to have_received(:handle_audit)
+    end
+
+    it "should call handle_audit" do
+      user.stub(:handle_audit)
+
+      user.save
+
+      audited_attributes={"name"=> 'darth', "username"=> 'darth',"activated"=>nil, "suspended_at"=>nil, "logins"=>0}
+      expect(user).to have_received(:handle_audit)#.with(action: 'create', audited_changes: audited_attributes)
+    end
+
+    it "should create AuditRecord::Audit instance with correct params" do
+      audit = spy('audit')
+      AuditRecord::Audit.stub(:new).and_return(audit)
+
+      user.save
+
+      audited_attributes={"name"=> 'darth', "username"=> 'darth',"activated"=>nil, "suspended_at"=>nil, "logins"=>0}
+      auditable_type='Models::ActiveRecord::User'
+      expect(audit).to have_received(:create).with(action: 'create',auditable_type:auditable_type,
+                                                   audited_changes:audited_attributes,auditable_id:kind_of(Numeric))
     end
 
     # it "should not audit an attribute which is excepted if specified on create or destroy" do
@@ -37,22 +58,67 @@ describe AuditRecord::Auditor do
   describe "on update" do
     let( :user ) { create_user}
 
-    it "should call audit_update" do
-      user.stub(:audit_update)
+    context 'when update attributes != empty' do
+      it "should call audit_update" do
+        user.stub(:audit_update)
 
-      user.save
+        user.update(name:'Tom')
 
-      expect(user).to have_received(:audit_update)
+        expect(user).to have_received(:audit_update)
+      end
+
+      it "should call handle_audit" do
+        user.stub(:handle_audit)
+
+        user.update(name:'Tom')
+
+        expect(user).to have_received(:handle_audit)
+      end
+
+      it "should create AuditRecord::Audit instance with correct params" do
+        user2=create_user
+        audit = spy('audit')
+        AuditRecord::Audit.stub(:new).and_return(audit)
+
+        user2.update(name:'Tom')
+
+        audited_attributes={"name"=> ["Brandon", "Tom"]}
+        auditable_type='Models::ActiveRecord::User'
+        expect(audit).to have_received(:create).with(action: 'update',auditable_type:auditable_type,
+                                                     audited_changes:audited_attributes,auditable_id:kind_of(Numeric))
+      end
+
     end
 
-    it "should call handle_audit" do
-      user.stub(:handle_audit)
+    context 'when update attributes == empty' do
+      it "should call audit_update" do
+        user.stub(:audit_update)
 
-      user.update(name:'Tom')
+        user.update(name:'Brandon')
 
-      audited_attributes={"name"=> ["Brandon", "Tom"]}
-      expect(user).to have_received(:handle_audit).with(action: 'update', audited_changes: audited_attributes)
+        expect(user).to have_received(:audit_update)
+      end
+
+      it "should call handle_audit" do
+        user.stub(:handle_audit)
+
+        user.update(name:'Brandon')
+
+        expect(user).to have_received(:handle_audit)
+      end
+
+      it "should not call create in AuditRecord::Audit instance" do
+        user2=create_user
+        audit = spy('audit')
+        AuditRecord::Audit.stub(:new).and_return(audit)
+
+        user2.update(name:'Brandon')
+
+        audited_attributes={"name"=> ["Brandon", "Tom"]}
+        auditable_type='Models::ActiveRecord::User'
+        expect(audit).to_not have_received(:create)
+      end
+
     end
-
   end
 end
