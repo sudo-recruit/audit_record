@@ -13,22 +13,12 @@ describe AuditRecord::Auditor do
       expect(user).to have_received(:audit_create)
     end
 
-    it "should call handle_audit with correct arguments" do
-      user.stub(:handle_audit)
-
-      user.save
-
-      audited_attributes={"name"=> 'darth', "username"=> 'darth',"activated"=>nil, "suspended_at"=>nil, "logins"=>0}
-      expect(user).to have_received(:handle_audit)
-    end
-
     it "should call handle_audit" do
       user.stub(:handle_audit)
 
       user.save
 
-      audited_attributes={"name"=> 'darth', "username"=> 'darth',"activated"=>nil, "suspended_at"=>nil, "logins"=>0}
-      expect(user).to have_received(:handle_audit)#.with(action: 'create', audited_changes: audited_attributes)
+      expect(user).to have_received(:handle_audit)
     end
 
     it "should create AuditRecord::Audit instance with correct params" do
@@ -121,4 +111,38 @@ describe AuditRecord::Auditor do
 
     end
   end
+
+  describe "on destroy" do
+    let( :user ) { create_user}
+
+    it "should call audit_destroy" do
+      user.stub(:audit_destroy)
+
+      user.destroy
+
+      expect(user).to have_received(:audit_destroy)
+    end
+
+    it "should call handle_audit" do
+      user2=create_user
+      user2.stub(:handle_audit)
+
+      user2.destroy
+
+      expect(user2).to have_received(:handle_audit)
+    end
+
+    it "should create AuditRecord::Audit instance with correct params" do
+      user2=create_user
+      audit = spy('audit')
+      AuditRecord::Audit.stub(:new).and_return(audit)
+
+      user2.destroy
+
+      auditable_type='Models::ActiveRecord::User'
+      expect(audit).to have_received(:create).with(action: 'destroy',auditable_type:auditable_type,
+                                                   audited_changes:'destroy',auditable_id:kind_of(Numeric))
+    end
+  end
+
 end

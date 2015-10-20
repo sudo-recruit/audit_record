@@ -26,6 +26,8 @@ module AuditRecord
 
         after_create :audit_create
         after_update :audit_update
+        after_destroy :audit_destroy
+
         after_commit :handle_audit
 
       end
@@ -76,6 +78,11 @@ module AuditRecord
           self.action='update'
           self.audited_changes_attrs=changes
         end
+      end
+
+      def audit_destroy
+        self.action='destroy'
+        self.audited_changes_attrs='destroy'
       end
     end
   end
