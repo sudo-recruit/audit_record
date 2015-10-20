@@ -36,9 +36,6 @@ module AuditRecord
 
 
     module LocalInstanceMethods
-      def squawk()
-        'squawk'
-      end
 
       def audited_attributes
         attributes.except(*non_audited_columns)
@@ -55,6 +52,8 @@ module AuditRecord
 
       def handle_audit(attrs)
         a=AuditRecord::Audit.new
+        attrs[:auditable_type]=self.class.to_s
+        attrs[:auditable_id]=self.id
         a.create(attrs)
       end
 

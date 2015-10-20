@@ -32,10 +32,11 @@ describe AuditsController do
 
   it "should call handle_audit when auditable change" do
     controller.send(:current_user=, user)
-    AuditRecord.stub(:handle_audit)
+    AuditRecord.handle_audit=Proc.new{}
+    AuditRecord.handle_audit.stub(:call)
 
     post :audit
 
-    expect(AuditRecord).to have_received(:handle_audit)
+    expect(AuditRecord.handle_audit).to have_received(:call).with(hash_including(:action => 'create',user:user))
   end
 end

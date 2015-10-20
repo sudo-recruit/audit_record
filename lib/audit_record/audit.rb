@@ -11,9 +11,10 @@ module AuditRecord
 
     def create(attrs={})
       run_callbacks(:create) do
-        binding.pry
         # handle something here
-        AuditRecord.handle_audit
+        if AuditRecord.handle_audit.present?
+          AuditRecord.handle_audit.call(attrs.merge(user:user))
+        end
       end
     end
 
