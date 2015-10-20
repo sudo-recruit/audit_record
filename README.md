@@ -1,6 +1,6 @@
 #AuditRecord
 > audit ActiveRecord change
 
-heavily inspired from [audited](https://github.com/collectiveidea/audited)
+heavily inspired by [audited](https://github.com/collectiveidea/audited)
 
 MIT
