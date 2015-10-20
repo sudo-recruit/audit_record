@@ -3,4 +3,20 @@
 
 heavily inspired by [audited](https://github.com/collectiveidea/audited)
 
+##How To Start
+###1. Add below to `config/initializer/audit_record.rb`
+
+```rb
+AuditRecord.handle_audit=Proc.new{|options|puts options} #change to whatever you want to audit active record
+AuditRecord.current_user_method=:current_rollbar_user #your custom current_user method
+```
+
+###2. add `audit` to the model you want to audit
+```rb
+class User < ::ActiveRecord::Base
+   audit
+   ...
+end
+```
+
 MIT

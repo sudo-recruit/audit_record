@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    audit_record (0.0.3)
+    audit_record (0.0.4)
       rails (~> 4.2.4)
       rails-observers (~> 0.1.2)
 
