@@ -29,7 +29,7 @@ describe AuditRecord::Auditor do
 
       audited_attributes={"name"=> 'darth', "username"=> 'darth',"activated"=>nil, "suspended_at"=>nil, "logins"=>0}
       auditable_type='Models::ActiveRecord::User'
-      expect(audit).to have_received(:create).with(action: 'create',auditable_type:auditable_type,
+      expect(audit).to have_received(:create).with(action: 'create',auditable_type:auditable_type,auditable_name:"darth",
                                                    audited_changes:audited_attributes,auditable_id:kind_of(Numeric))
     end
 
@@ -74,7 +74,7 @@ describe AuditRecord::Auditor do
 
         audited_attributes={"name"=> ["Brandon", "Tom"]}
         auditable_type='Models::ActiveRecord::User'
-        expect(audit).to have_received(:create).with(action: 'update',auditable_type:auditable_type,
+        expect(audit).to have_received(:create).with(action: 'update',auditable_type:auditable_type,auditable_name:"Tom",
                                                      audited_changes:audited_attributes,auditable_id:kind_of(Numeric))
       end
 
@@ -140,7 +140,7 @@ describe AuditRecord::Auditor do
       user2.destroy
 
       auditable_type='Models::ActiveRecord::User'
-      expect(audit).to have_received(:create).with(action: 'destroy',auditable_type:auditable_type,
+      expect(audit).to have_received(:create).with(action: 'destroy',auditable_type:auditable_type,auditable_name:"Brandon",
                                                    audited_changes:'destroy',auditable_id:kind_of(Numeric))
     end
   end

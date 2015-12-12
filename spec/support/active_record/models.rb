@@ -4,7 +4,7 @@ require File.expand_path('../schema', __FILE__)
 module Models
   module ActiveRecord
     class User < ::ActiveRecord::Base
-      audit
+      audit auditable_name: :name
       # audited allow_mass_assignment: true, except: :password
 
       # attr_protected :logins

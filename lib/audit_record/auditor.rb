@@ -13,6 +13,8 @@ module AuditRecord
       def audit(options = {})
         include AuditRecord::Auditor::LocalInstanceMethods
         class_attribute :non_audited_columns,   instance_writer: false
+        class_attribute :auditable_name,   instance_writer: false
+
 
         if options[:only]
           except = column_names - Array(options[:only]).flatten.map(&:to_s)
@@ -22,6 +24,7 @@ module AuditRecord
         end
 
         self.non_audited_columns = except
+        self.auditable_name = options[:auditable_name]
 
 
         after_create :audit_create
@@ -61,6 +64,11 @@ module AuditRecord
           attrs={action:action,audited_changes:audited_changes_attrs}
           attrs[:auditable_type]=self.class.to_s
           attrs[:auditable_id]=self.id
+
+          if auditable_name.present?&&self.respond_to?(*auditable_name)
+            attrs[:auditable_name]=self.send(*auditable_name)
+          end
+
           a.create(attrs)
         end
       end
