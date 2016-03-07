@@ -1,9 +1,8 @@
+require 'record_auditor/auditor'
+require 'record_auditor/audit'
 
-require 'audit_record/auditor'
-require 'audit_record/audit'
 
-
-module AuditRecord
+module RecordAuditor
   class << self
     attr_accessor :ignored_attributes,:handle_audit,:current_user_method, :audit_class
     # , :current_user_method, :audit_class
@@ -16,5 +15,5 @@ module AuditRecord
   @current_user_method = :current_user
 end
 
-AuditRecord.audit_class = AuditRecord::Audit
-require 'audit_record/sweeper'
+RecordAuditor.audit_class = RecordAuditor::Audit
+require 'record_auditor/sweeper'

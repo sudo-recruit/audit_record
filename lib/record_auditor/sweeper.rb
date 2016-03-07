@@ -1,9 +1,9 @@
 require "rails/observers/activerecord/active_record"
 require "rails/observers/action_controller/caching"
 
-module AuditRecord
+module RecordAuditor
   class Sweeper < ActionController::Caching::Sweeper
-    observe AuditRecord.audit_class
+    observe RecordAuditor.audit_class
 
     attr_accessor :controller
 
@@ -22,7 +22,7 @@ module AuditRecord
     end
 
     def current_user
-      controller.send(AuditRecord.current_user_method) if controller.respond_to?(AuditRecord.current_user_method, true)
+      controller.send(RecordAuditor.current_user_method) if controller.respond_to?(RecordAuditor.current_user_method, true)
     end
 
     def add_observer!(klass)
@@ -40,17 +40,17 @@ module AuditRecord
     end
 
     def controller
-      ::AuditRecord.store[:current_controller]
+      ::RecordAuditor.store[:current_controller]
     end
 
     def controller=(value)
-      ::AuditRecord.store[:current_controller] = value
+      ::RecordAuditor.store[:current_controller] = value
     end
   end
 end
 
 if defined?(ActionController) && defined?(ActionController::Base)
   ActionController::Base.class_eval do
-    around_filter AuditRecord::Sweeper.instance
+    around_filter RecordAuditor::Sweeper.instance
   end
 end

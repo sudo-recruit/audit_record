@@ -1,3 +1,3 @@
-module AuditRecord
+module RecordAuditor
   VERSION = "0.0.5"
 end

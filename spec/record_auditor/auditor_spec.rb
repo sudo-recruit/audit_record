@@ -1,7 +1,7 @@
 require "spec_helper"
 require 'pry'
 
-describe AuditRecord::Auditor do
+describe RecordAuditor::Auditor do
   describe "on create" do
     let( :user ) { build_user}
 
@@ -21,9 +21,9 @@ describe AuditRecord::Auditor do
       expect(user).to have_received(:handle_audit)
     end
 
-    it "should create AuditRecord::Audit instance with correct params" do
+    it "should create RecordAuditor::Audit instance with correct params" do
       audit = spy('audit')
-      AuditRecord::Audit.stub(:new).and_return(audit)
+      RecordAuditor::Audit.stub(:new).and_return(audit)
 
       user.save
 
@@ -65,10 +65,10 @@ describe AuditRecord::Auditor do
         expect(user).to have_received(:handle_audit)
       end
 
-      it "should create AuditRecord::Audit instance with correct params" do
+      it "should create RecordAuditor::Audit instance with correct params" do
         user2=create_user
         audit = spy('audit')
-        AuditRecord::Audit.stub(:new).and_return(audit)
+        RecordAuditor::Audit.stub(:new).and_return(audit)
 
         user2.update(name:'Tom')
 
@@ -97,10 +97,10 @@ describe AuditRecord::Auditor do
         expect(user).to have_received(:handle_audit)
       end
 
-      it "should not call create in AuditRecord::Audit instance" do
+      it "should not call create in RecordAuditor::Audit instance" do
         user2=create_user
         audit = spy('audit')
-        AuditRecord::Audit.stub(:new).and_return(audit)
+        RecordAuditor::Audit.stub(:new).and_return(audit)
 
         user2.update(name:'Brandon')
 
@@ -132,10 +132,10 @@ describe AuditRecord::Auditor do
       expect(user2).to have_received(:handle_audit)
     end
 
-    it "should create AuditRecord::Audit instance with correct params" do
+    it "should create RecordAuditor::Audit instance with correct params" do
       user2=create_user
       audit = spy('audit')
-      AuditRecord::Audit.stub(:new).and_return(audit)
+      RecordAuditor::Audit.stub(:new).and_return(audit)
 
       user2.destroy
 

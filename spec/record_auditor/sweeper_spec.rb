@@ -25,18 +25,18 @@ describe AuditsController do
   render_views
 
   before(:each) do
-    AuditRecord.current_user_method = :current_user
+    RecordAuditor.current_user_method = :current_user
   end
 
   let( :user ) { create_user }
 
   it "should call handle_audit when auditable change" do
     controller.send(:current_user=, user)
-    AuditRecord.handle_audit=Proc.new{}
-    AuditRecord.handle_audit.stub(:call)
+    RecordAuditor.handle_audit=Proc.new{}
+    RecordAuditor.handle_audit.stub(:call)
 
     post :audit
 
-    expect(AuditRecord.handle_audit).to have_received(:call).with(hash_including(:action => 'create',user:user))
+    expect(RecordAuditor.handle_audit).to have_received(:call).with(hash_including(:action => 'create',user:user))
   end
 end

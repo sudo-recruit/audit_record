@@ -1,4 +1,4 @@
-module AuditRecordSpecHelpers
+module RecordAuditorSpecHelpers
 
   def create_user(attrs = {})
     Models::ActiveRecord::User.create({name: 'Brandon', username: 'brandon', password: 'password'}.merge(attrs))
