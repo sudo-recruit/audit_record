@@ -1121,3 +1121,271 @@ D, [2015-12-12T22:44:05.000614 #17334] DEBUG -- :   [1m[35m (0.1ms)[0m  commi
 D, [2015-12-12T22:44:05.006822 #17334] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
 D, [2015-12-12T22:44:05.007837 #17334] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-12-12 14:44:05.006985"], ["updated_at", "2015-12-12 14:44:05.006985"]]
 D, [2015-12-12T22:44:05.008349 #17334] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.059898 #58598] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "activated" boolean, "suspended_at" datetime, "logins" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-03-07T11:01:28.301936 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.305273 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:01:28.304170"], ["updated_at", "2016-03-07 03:01:28.304170"]]
+D, [2016-03-07T11:01:28.305712 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.306956 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.307754 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:01:28.307084"], ["updated_at", "2016-03-07 03:01:28.307084"]]
+D, [2016-03-07T11:01:28.308114 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.309260 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.309970 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:01:28.309385"], ["updated_at", "2016-03-07 03:01:28.309385"]]
+D, [2016-03-07T11:01:28.310301 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.311652 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.312443 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.311777"], ["updated_at", "2016-03-07 03:01:28.311777"]]
+D, [2016-03-07T11:01:28.312799 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.313262 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.325251 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:01:28.313571"], ["id", 4]]
+D, [2016-03-07T11:01:28.325634 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.327647 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.328723 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.327846"], ["updated_at", "2016-03-07 03:01:28.327846"]]
+D, [2016-03-07T11:01:28.329191 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.329762 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.330818 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:01:28.330070"], ["id", 5]]
+D, [2016-03-07T11:01:28.331167 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.332368 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.333328 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.332540"], ["updated_at", "2016-03-07 03:01:28.332540"]]
+D, [2016-03-07T11:01:28.333712 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.334158 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.335080 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:01:28.334346"], ["id", 6]]
+D, [2016-03-07T11:01:28.335341 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.336428 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.337110 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.336524"], ["updated_at", "2016-03-07 03:01:28.336524"]]
+D, [2016-03-07T11:01:28.337422 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.337928 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.338530 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.340862 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.342325 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.341153"], ["updated_at", "2016-03-07 03:01:28.341153"]]
+D, [2016-03-07T11:01:28.343080 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.343913 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.345418 #58598] DEBUG -- :   [1m[35m (0.2ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.347695 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.348486 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.347835"], ["updated_at", "2016-03-07 03:01:28.347835"]]
+D, [2016-03-07T11:01:28.348856 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.349313 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.349681 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.350723 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.351406 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.350813"], ["updated_at", "2016-03-07 03:01:28.350813"]]
+D, [2016-03-07T11:01:28.351732 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.352116 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.352532 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 10]]
+D, [2016-03-07T11:01:28.352721 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.353630 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.354533 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.353733"], ["updated_at", "2016-03-07 03:01:28.353733"]]
+D, [2016-03-07T11:01:28.354921 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.355331 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.355669 #58598] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 11]]
+D, [2016-03-07T11:01:28.355790 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.356702 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.357348 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.356801"], ["updated_at", "2016-03-07 03:01:28.356801"]]
+D, [2016-03-07T11:01:28.357647 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.358108 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.358418 #58598] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 12]]
+D, [2016-03-07T11:01:28.358554 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:28.362613 #58598] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:28.363384 #58598] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:28.362741"], ["updated_at", "2016-03-07 03:01:28.362741"]]
+D, [2016-03-07T11:01:28.363709 #58598] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:28.367583 #58598] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:28.368328 #58598] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-03-07 03:01:28.367733"], ["updated_at", "2016-03-07 03:01:28.367733"]]
+D, [2016-03-07T11:01:28.368634 #58598] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.057832 #58630] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "activated" boolean, "suspended_at" datetime, "logins" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-03-07T11:01:48.234682 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.237346 #58630] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:01:48.236246"], ["updated_at", "2016-03-07 03:01:48.236246"]]
+D, [2016-03-07T11:01:48.237812 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.239209 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.240081 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:01:48.239381"], ["updated_at", "2016-03-07 03:01:48.239381"]]
+D, [2016-03-07T11:01:48.240472 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.241850 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.242686 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:01:48.242001"], ["updated_at", "2016-03-07 03:01:48.242001"]]
+D, [2016-03-07T11:01:48.243050 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.244436 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.245173 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.244556"], ["updated_at", "2016-03-07 03:01:48.244556"]]
+D, [2016-03-07T11:01:48.245514 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.245953 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.249529 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:01:48.246202"], ["id", 4]]
+D, [2016-03-07T11:01:48.249886 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.251145 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.251851 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.251264"], ["updated_at", "2016-03-07 03:01:48.251264"]]
+D, [2016-03-07T11:01:48.252240 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.252668 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.253489 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:01:48.252925"], ["id", 5]]
+D, [2016-03-07T11:01:48.253767 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.254778 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.255443 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.254878"], ["updated_at", "2016-03-07 03:01:48.254878"]]
+D, [2016-03-07T11:01:48.255842 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.256342 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.257092 #58630] DEBUG -- :   [1m[36mSQL (0.0ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:01:48.256529"], ["id", 6]]
+D, [2016-03-07T11:01:48.257343 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.266809 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.267663 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.266964"], ["updated_at", "2016-03-07 03:01:48.266964"]]
+D, [2016-03-07T11:01:48.268039 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.268527 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.269084 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.270016 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.270690 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.270130"], ["updated_at", "2016-03-07 03:01:48.270130"]]
+D, [2016-03-07T11:01:48.271017 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.271425 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.271877 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.273175 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.275435 #58630] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.273800"], ["updated_at", "2016-03-07 03:01:48.273800"]]
+D, [2016-03-07T11:01:48.276319 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.277774 #58630] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.279121 #58630] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.281828 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.282703 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.281960"], ["updated_at", "2016-03-07 03:01:48.281960"]]
+D, [2016-03-07T11:01:48.283095 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.283584 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.284178 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 10]]
+D, [2016-03-07T11:01:48.284417 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.285471 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.286208 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.285586"], ["updated_at", "2016-03-07 03:01:48.285586"]]
+D, [2016-03-07T11:01:48.286573 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.286961 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.287321 #58630] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 11]]
+D, [2016-03-07T11:01:48.287443 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.288562 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.289363 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.288683"], ["updated_at", "2016-03-07 03:01:48.288683"]]
+D, [2016-03-07T11:01:48.289714 #58630] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.290175 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.290506 #58630] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 12]]
+D, [2016-03-07T11:01:48.290636 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:01:48.293808 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:01:48.294678 #58630] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:01:48.293939"], ["updated_at", "2016-03-07 03:01:48.293939"]]
+D, [2016-03-07T11:01:48.295089 #58630] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:01:48.298168 #58630] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:01:48.298951 #58630] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-03-07 03:01:48.298295"], ["updated_at", "2016-03-07 03:01:48.298295"]]
+D, [2016-03-07T11:01:48.299298 #58630] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.464258 #58660] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "activated" boolean, "suspended_at" datetime, "logins" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-03-07T11:02:02.630240 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.633165 #58660] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:02:02.631937"], ["updated_at", "2016-03-07 03:02:02.631937"]]
+D, [2016-03-07T11:02:02.633662 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.635111 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.635926 #58660] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:02:02.635252"], ["updated_at", "2016-03-07 03:02:02.635252"]]
+D, [2016-03-07T11:02:02.636306 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.637596 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.638348 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:02:02.637745"], ["updated_at", "2016-03-07 03:02:02.637745"]]
+D, [2016-03-07T11:02:02.638838 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.640218 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.640949 #58660] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.640348"], ["updated_at", "2016-03-07 03:02:02.640348"]]
+D, [2016-03-07T11:02:02.641293 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.641716 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.645765 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:02:02.641971"], ["id", 4]]
+D, [2016-03-07T11:02:02.646199 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.647397 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.655682 #58660] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.647515"], ["updated_at", "2016-03-07 03:02:02.647515"]]
+D, [2016-03-07T11:02:02.656342 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.656864 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.657829 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:02:02.657151"], ["id", 5]]
+D, [2016-03-07T11:02:02.658157 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.659672 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.660603 #58660] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.659819"], ["updated_at", "2016-03-07 03:02:02.659819"]]
+D, [2016-03-07T11:02:02.661074 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.661904 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.662929 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:02:02.662284"], ["id", 6]]
+D, [2016-03-07T11:02:02.663205 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.664405 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.665062 #58660] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.664500"], ["updated_at", "2016-03-07 03:02:02.664500"]]
+D, [2016-03-07T11:02:02.665433 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.665843 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.666344 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.667229 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.667897 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.667321"], ["updated_at", "2016-03-07 03:02:02.667321"]]
+D, [2016-03-07T11:02:02.668338 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.668718 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.669136 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.669947 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.670633 #58660] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.670023"], ["updated_at", "2016-03-07 03:02:02.670023"]]
+D, [2016-03-07T11:02:02.670947 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.671355 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.671735 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.672702 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.674844 #58660] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.672815"], ["updated_at", "2016-03-07 03:02:02.672815"]]
+D, [2016-03-07T11:02:02.675677 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.676783 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.678074 #58660] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 10]]
+D, [2016-03-07T11:02:02.678772 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.681544 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.682327 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.681698"], ["updated_at", "2016-03-07 03:02:02.681698"]]
+D, [2016-03-07T11:02:02.682650 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.683046 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.683357 #58660] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 11]]
+D, [2016-03-07T11:02:02.683479 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.684553 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.685230 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.684662"], ["updated_at", "2016-03-07 03:02:02.684662"]]
+D, [2016-03-07T11:02:02.685554 #58660] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.686014 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.686317 #58660] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 12]]
+D, [2016-03-07T11:02:02.686448 #58660] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:02:02.689775 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:02:02.690580 #58660] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:02:02.689905"], ["updated_at", "2016-03-07 03:02:02.689905"]]
+D, [2016-03-07T11:02:02.690969 #58660] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:02:02.693832 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:02:02.694585 #58660] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-03-07 03:02:02.693953"], ["updated_at", "2016-03-07 03:02:02.693953"]]
+D, [2016-03-07T11:02:02.694918 #58660] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:52.937281 #59055] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "activated" boolean, "suspended_at" datetime, "logins" integer DEFAULT 0, "created_at" datetime, "updated_at" datetime) [0m
+D, [2016-03-07T11:03:53.096301 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.098966 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:03:53.097916"], ["updated_at", "2016-03-07 03:03:53.097916"]]
+D, [2016-03-07T11:03:53.099398 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.100612 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.101352 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:03:53.100735"], ["updated_at", "2016-03-07 03:03:53.100735"]]
+D, [2016-03-07T11:03:53.101691 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.102902 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.103601 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "darth"], ["username", "darth"], ["password", "noooooooo"], ["created_at", "2016-03-07 03:03:53.103016"], ["updated_at", "2016-03-07 03:03:53.103016"]]
+D, [2016-03-07T11:03:53.103922 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.105125 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.105809 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.105231"], ["updated_at", "2016-03-07 03:03:53.105231"]]
+D, [2016-03-07T11:03:53.106118 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.106524 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.110480 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:03:53.106748"], ["id", 4]]
+D, [2016-03-07T11:03:53.110863 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.118413 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.119182 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.118558"], ["updated_at", "2016-03-07 03:03:53.118558"]]
+D, [2016-03-07T11:03:53.119530 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.120050 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.121623 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:03:53.120580"], ["id", 5]]
+D, [2016-03-07T11:03:53.122095 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.123409 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.124296 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.123548"], ["updated_at", "2016-03-07 03:03:53.123548"]]
+D, [2016-03-07T11:03:53.124990 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.126409 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.127643 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["name", "Tom"], ["updated_at", "2016-03-07 03:03:53.126835"], ["id", 6]]
+D, [2016-03-07T11:03:53.128171 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.129449 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.130202 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.129564"], ["updated_at", "2016-03-07 03:03:53.129564"]]
+D, [2016-03-07T11:03:53.130527 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.130932 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.131391 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.132441 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.133394 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.132580"], ["updated_at", "2016-03-07 03:03:53.132580"]]
+D, [2016-03-07T11:03:53.133900 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.134891 #59055] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.136262 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.138144 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.139542 #59055] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.138389"], ["updated_at", "2016-03-07 03:03:53.138389"]]
+D, [2016-03-07T11:03:53.140711 #59055] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.142407 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.143205 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.144340 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.145142 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.144474"], ["updated_at", "2016-03-07 03:03:53.144474"]]
+D, [2016-03-07T11:03:53.145474 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.145866 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.146307 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 10]]
+D, [2016-03-07T11:03:53.146498 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.147521 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.148172 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.147621"], ["updated_at", "2016-03-07 03:03:53.147621"]]
+D, [2016-03-07T11:03:53.148476 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.148846 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.149203 #59055] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 11]]
+D, [2016-03-07T11:03:53.149321 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.150274 #59055] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.151005 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.150393"], ["updated_at", "2016-03-07 03:03:53.150393"]]
+D, [2016-03-07T11:03:53.151328 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.151765 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.152098 #59055] DEBUG -- :   [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 12]]
+D, [2016-03-07T11:03:53.152243 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2016-03-07T11:03:53.155189 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2016-03-07T11:03:53.155910 #59055] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brandon"], ["username", "brandon"], ["password", "password"], ["created_at", "2016-03-07 03:03:53.155317"], ["updated_at", "2016-03-07 03:03:53.155317"]]
+D, [2016-03-07T11:03:53.156247 #59055] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2016-03-07T11:03:53.159301 #59055] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2016-03-07T11:03:53.160088 #59055] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-03-07 03:03:53.159432"], ["updated_at", "2016-03-07 03:03:53.159432"]]
+D, [2016-03-07T11:03:53.160394 #59055] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m

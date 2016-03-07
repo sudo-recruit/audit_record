@@ -2,8 +2,8 @@ ENV['RAILS_ENV'] = 'test'
 
 require 'rails_app/config/environment'
 require 'rspec/rails'
-require 'audit_record'
-require 'audit_record_spec_helpers'
+require 'record_auditor'
+require 'record_auditor_spec_helpers'
 require 'support/active_record/models'
 
 SPEC_ROOT = Pathname.new(File.expand_path('../', __FILE__))
@@ -11,7 +11,7 @@ SPEC_ROOT = Pathname.new(File.expand_path('../', __FILE__))
 Dir[SPEC_ROOT.join('support/*.rb')].each{|f| require f }
 
 RSpec.configure do |config|
-   config.include AuditRecordSpecHelpers
+   config.include RecordAuditorSpecHelpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

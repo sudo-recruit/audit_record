@@ -1,4 +1,4 @@
-module AuditRecord
+module RecordAuditor
   class Audit
     # include ActiveModel::Observing
     extend ActiveModel::Callbacks
@@ -12,8 +12,8 @@ module AuditRecord
     def create(attrs={})
       run_callbacks(:create) do
         # handle something here
-        if AuditRecord.handle_audit.present?
-          AuditRecord.handle_audit.call(attrs.merge(user:user))
+        if RecordAuditor.handle_audit.present?
+          RecordAuditor.handle_audit.call(attrs.merge(user:user))
         end
       end
     end

@@ -1,4 +1,4 @@
-module AuditRecord
+module RecordAuditor
   module Auditor
     extend ActiveSupport::Concern
 
@@ -11,7 +11,7 @@ module AuditRecord
       end
 
       def audit(options = {})
-        include AuditRecord::Auditor::LocalInstanceMethods
+        include RecordAuditor::Auditor::LocalInstanceMethods
         class_attribute :non_audited_columns,   instance_writer: false
         class_attribute :auditable_name,   instance_writer: false
 
@@ -19,7 +19,7 @@ module AuditRecord
         if options[:only]
           except = column_names - Array(options[:only]).flatten.map(&:to_s)
         else
-          except = default_ignored_attributes + AuditRecord.ignored_attributes
+          except = default_ignored_attributes + RecordAuditor.ignored_attributes
           except |= Array(options[:except]).collect(&:to_s) if options[:except]
         end
 
@@ -60,7 +60,7 @@ module AuditRecord
 
       def handle_audit()
         if audited_changes_attrs.present?
-          a=AuditRecord::Audit.new
+          a=RecordAuditor::Audit.new
           attrs={action:action,audited_changes:audited_changes_attrs}
           attrs[:auditable_type]=self.class.to_s
           attrs[:auditable_id]=self.id
@@ -96,4 +96,4 @@ module AuditRecord
   end
 end
 
-ActiveRecord::Base.send :include, AuditRecord::Auditor
+ActiveRecord::Base.send :include, RecordAuditor::Auditor
