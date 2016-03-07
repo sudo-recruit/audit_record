@@ -10,18 +10,18 @@ Gem::Specification.new do |gem|
   gem.authors     = ["ocowchun"]
   gem.email       = ["ocowchun@gmail.com"]
   gem.homepage    = "https://github.com/sudo-recruit/audit_record"
-  gem.summary     = "audit ActiveRecord change"
+  gem.summary     = "audit_record is a gem to audit ActiveRecord change"
   gem.description = "audit ActiveRecord change"
   gem.license     = "MIT"
 
   gem.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   gem.test_files    = gem.files.grep(/^spec\//)
 
-  gem.add_dependency "rails", "~> 4.2.4"
+  gem.add_dependency "rails", '~> 4.2', '>= 4.2.4'
   gem.add_dependency 'rails-observers', '~> 0.1.2'
 
-  gem.add_development_dependency "sqlite3"
+  gem.add_development_dependency "sqlite3", '~> 0'
   gem.add_development_dependency 'rspec-rails', '~> 3.0'
-  gem.add_development_dependency "pry"
+  gem.add_development_dependency "pry", '~> 0'
 
 end
